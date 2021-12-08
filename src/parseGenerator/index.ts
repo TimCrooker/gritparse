@@ -2,6 +2,8 @@ import path from 'path'
 import sum from 'hash-sum'
 import { parse } from 'parse-package-name'
 import { removeLocalPathPrefix, isLocalPath } from '@/config'
+const REPOS_CACHE_PATH = ''
+const PACKAGES_CACHE_PATH = ''
 
 interface Basegenerator {
 	type: 'local' | 'npm' | 'repo'
