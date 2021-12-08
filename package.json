@@ -1,6 +1,6 @@
 {
 	"name": "gritparse",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Parse and retrieve grit generators",
 	"main": "dist/index.js",
 	"bin": {
