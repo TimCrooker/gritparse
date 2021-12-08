@@ -1,4 +1,3 @@
-
 import { defaultGeneratorFile } from '@/defaultGenerator'
 import { parseGenerator } from '@/parseGenerator'
 import path from 'path'

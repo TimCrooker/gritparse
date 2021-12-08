@@ -1,16 +1,8 @@
 import path from 'path'
 import sum from 'hash-sum'
 import { parse } from 'parse-package-name'
-import os from 'os'
 import { removeLocalPathPrefix, isLocalPath } from '@/config'
-const STORE_VERSION = 2
-export const ROOT_CACHE_PATH = path.join(
-	os.homedir(),
-	`.grit/V${STORE_VERSION}`
-)
-export const GENERATORS_CACHE_PATH = path.join(ROOT_CACHE_PATH, 'generators')
-export const PACKAGES_CACHE_PATH = path.join(GENERATORS_CACHE_PATH, 'packages')
-export const REPOS_CACHE_PATH = path.join(GENERATORS_CACHE_PATH, 'repos')
+import { PACKAGES_CACHE_PATH, REPOS_CACHE_PATH } from 'gritstore'
 
 interface Basegenerator {
 	type: 'local' | 'npm' | 'repo'
