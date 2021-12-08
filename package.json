@@ -1,0 +1,79 @@
+{
+	"name": "gritparse",
+	"version": "0.1.1",
+	"description": "Parse and retrieve grit generators",
+	"main": "dist/index.js",
+	"bin": {
+		"grit": "dist/cli/index.js"
+	},
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"!**/*.(test|spec).ts"
+	],
+	"scripts": {
+		"start": "npm run build && npm run cli",
+		"build:watch": "nodemon --watch src -e ts --ignore dist --exec npm run build",
+		"build": "npm run clean && tsup src/index.ts --dts",
+		"clean": "rimraf ./dist",
+		"test": "jest",
+		"lint": "eslint . --fix",
+		"prepublishOnly": "npm run build",
+		"release": "dotenv release-it",
+		"release:ci": "dotenv release-it --ci"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=12"
+	},
+	"dependencies": {
+		"@egoist/extract-zip": "^2.0.1",
+		"axios": "^0.24.0",
+		"cross-spawn": "^7.0.3",
+		"dot-prop": "^6.0.1",
+		"grit-cli": "^0.5.8",
+		"hash-sum": "^2.0.0",
+		"move-file": "^2.1.0",
+		"parse-package-name": "^1.0.0",
+		"swaglog": "^0.0.0",
+		"youtill": "^0.1.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.14.8",
+		"@babel/core": "^7.15.5",
+		"@babel/plugin-transform-runtime": "^7.15.0",
+		"@babel/preset-env": "^7.15.4",
+		"@babel/preset-typescript": "^7.15.0",
+		"@types/axios": "^0.14.0",
+		"@types/cross-spawn": "^6.0.2",
+		"@types/fs-extra": "^9.0.1",
+		"@types/hash-sum": "^1.0.0",
+		"@types/jest": "^27.0.3",
+		"@types/lodash": "^4.14.176",
+		"@types/node": "^16.7.10",
+		"@types/parse-package-name": "^0.1.0",
+		"@types/rimraf": "^3.0.2",
+		"@typescript-eslint/eslint-plugin": "^2.33.0",
+		"@typescript-eslint/parser": "^2.33.0",
+		"alias-hq": "^5.3.0",
+		"babel-jest": "^27.1.0",
+		"cz-conventional-changelog": "3.2.0",
+		"dotenv-cli": "^4.0.0",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"jest": "^26.0.1",
+		"prettier": "^2.3.2",
+		"release-it": "^14.11.8",
+		"ts-node": "^8.10.2",
+		"tsup": "^5.5.0",
+		"type-fest": "^2.5.2",
+		"typescript": "^4.1.2"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"keywords": []
+}
